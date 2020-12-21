@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8" />
   <meta name="viewport" content="width=device-width" />
-  <title>Random Name Picker</title>
+  <title>Pilih Pemenang</title>
 
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/foundation.css" />
@@ -32,7 +32,7 @@ body { background:#F1C40F url(img/bg-noise-orange.png); }
 		<div class="large-12 columns" style="padding-top:50px;background:#111 url(img/header-bg.png) repeat-x center top;z-index:20;">
 		<ul class="button-group even-4">
       <li><a href="index.html" class="alert button" id="reset">Reset</a></li>
-			<li><button class="button" id="list" onclick="namelist();">Name List</button></li>
+			<li><button class="button" id="list" onclick="namelist();">Daftar Nama</button></li>
 			<li><button class="button" id="save" onclick="save();">Save &amp; Update</button></li>
 			<li><button class="success button" id="go" onclick="go();">GO!</button></li>
     </ul>
@@ -42,7 +42,7 @@ body { background:#F1C40F url(img/bg-noise-orange.png); }
 
 	<div class="row">
 		<div class="large-12 columns">
-			<h3 style="text-align:center;margin-top:30px;" id="headline">Let's see who is The Lucky One?</h3>
+			<h3 style="text-align:center;margin-top:30px;" id="headline">Siapa Pemenangnya?</h3>
 			
 			<div id="varnote"><img src="img/logo.png"><div class="copyright">&copy; Coded by <strong>Heiswayi Nrird</strong>, June 2013</div></div>
 			
@@ -260,7 +260,7 @@ function save(){
         savenames = $("#namesbox").val();
         savenames = savenames.replace(/\n\r?/g, '101');
         $('#headline').fadeOut();
-        $('#headline').text('The name list is saved and updated.').fadeIn();
+        $('#headline').text('Daftar nama tersimpan!').fadeIn();
         $("#names").show();
         $('#namesbox').attr('disabled','disabled');
 }
@@ -268,7 +268,7 @@ function save(){
 function namelist(){
         $("#varnote").hide();
         $('#namesbox').removeAttr('disabled','disabled');
-        $('#headline').text('Configure name list');
+        $('#headline').text('Atur Daftar Nama');
         $("#popdown").show();
         $("#values").hide();
         $("#names").show();
@@ -346,11 +346,11 @@ function standout(text){
         $('#result1').removeClass('name');
         $('.name').animate({opacity: .25});
         $('#result1').animate({height: '+=60px'});
-        $('#result1').append('<div class="extra"><a class="small alert button" href="#" onClick="removevictim();">Remove name from list</a></div>');
+        $('#result1').append('<div class="extra"><a class="small alert button" href="#" onClick="removevictim();">Keluarkan Nama Dari Daftar</a></div>');
         $('#go').removeAttr('disabled','disabled');
         $('#list').removeAttr('disabled','disabled');
         $('#save').removeAttr('disabled','disabled');
-        $('#headline').text('Found the Winner!');
+        $('#headline').text('SELAMAT!');
         $('#headline').slideDown();
 }
 
@@ -373,7 +373,7 @@ function removevictim(){
   });
   $("div").remove(".name");
   $("div").remove(".extra");
-  $('#headline').text('OK, done! Let\'s see who is next? Just click "GO!" button for next roll.');
+  $('#headline').text('Sip! Siapa pemenang selanjutnya? Klik "GO" sekali lagi.');
 }
 
 </script>
